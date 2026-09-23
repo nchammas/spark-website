@@ -440,7 +440,7 @@ The apache/spark-docker provides Dockerfiles and GitHub Action for Spark Docker 
 <h3 id="create-an-announcement">Create an announcement</h3>
 
 Once everything is working (website docs, website changes) create an announcement on the website
-and then send an e-mail to the mailing list with a subject that looks something like `[ANNOUNCE] ...`. To create an announcement, create a post under `news/_posts`. GitHub Actions will automatically generate the corresponding HTML.
+and then send an e-mail to the mailing list with a subject that looks something like `[ANNOUNCE] ...`. To create an announcement, create a post under `news/_posts`. GitHub Actions will automatically generate the corresponding HTML when you push to `asf-site`.
 
 Enjoy an adult beverage of your choice, and congratulations on making a Spark release.
 
