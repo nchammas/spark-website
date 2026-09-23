@@ -337,7 +337,7 @@ The website repository is located at
 It's recommended to not remove the generated docs of the latest RC, so that we can copy it to
 spark-website directly, otherwise you need to re-build the docs.
 
-```
+```sh
 # Build the latest docs
 $ git checkout v1.1.1
 $ cd docs
@@ -352,24 +352,22 @@ $ cp -R _site spark-website/site/docs/1.1.1
 $ cd spark-website/site/docs
 $ rm latest
 $ ln -s 1.1.1 latest
+$ cd ../..
+$ git add site/docs/1.1.1 site/docs/latest
+$ git commit -m "Add docs for Spark 1.1.1"
 ```
 
 <h4 id="update-the-rest-of-the-spark-website">Update the rest of the Spark website</h4>
 
-Next, update the rest of the Spark website. See how the previous releases are documented
-(all the HTML file changes are generated automatically by a GitHub workflow). In particular:
+Next, update the rest of the Spark website. See how the previous releases are documented. In particular:
 
 * update `documentation.md` to add link to the docs for the new release
 * add the new release to `js/downloads.js` (attention to the order of releases)
 * update `downloads.md` to use the latest release in the linking example
-* add the new release to [`static/versions.json`](static/versions.json) (attention to the order of releases) [for `spark version drop down` of the `PySpark` docs]
+* add the new release to `site/static/versions.json` (attention to the order of releases) [for `spark version drop down` of the `PySpark` docs]
 * check `security.md` for anything to update
 
-```sh
-# The `-f` is because we normally ignore changes under `site/`.
-$ git add -f site/docs/1.1.1 site/docs/latest
-$ git commit -m "Add docs for Spark 1.1.1"
-```
+Commit these source files normally. You do not need to run `jekyll build` or commit anything else under `site/`. After the change is merged to `asf-site`, GitHub Actions generates the HTML under `site/` and pushes it for you.
 
 Then, create the release notes. Go to the
 <a href="https://issues.apache.org/jira/projects/SPARK?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page">release page in JIRA</a>,
@@ -378,9 +376,7 @@ pick the release version from the list, then click on "Release Notes". Copy this
 `spark-2.1.2`. Create a new release post under `releases/_posts` to include this short URL. The date of the post should
 be the date you create it.
 
-After merging the change into the `asf-site` branch, you may need to create a follow-up empty
-commit to force synchronization between ASF's git and the web site, and also the GitHub mirror.
-For some reason synchronization seems to not be reliable for this repository.
+After merging the change into the `asf-site` branch, confirm the GitHub Actions run finished and the generated HTML is on the site. You may need to create a follow-up empty commit to force synchronization between ASF's git and the website, and also the GitHub mirror. For some reason synchronization seems to not be reliable for this repository.
 
 On a related note, make sure the version is marked as released on JIRA. Go find the release page as above, eg.,
 [`https://issues.apache.org/jira/projects/SPARK/versions/12340295`](https://issues.apache.org/jira/projects/SPARK/versions/12340295),
