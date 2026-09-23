@@ -1,5 +1,5 @@
 <!--
-Include changes to the source Markdown files only. A GitHub workflow will automatically generate and commit the HTML for you.
+You only need to include changes to the source Markdown files. A GitHub workflow will automatically generate and push the HTML under `site/` in a follow-up commit if necessary.
 
 For more details review the main README.
 -->
