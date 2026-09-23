@@ -224,6 +224,8 @@ Note that `dev/create-release/do-release-docker.sh` script (`finalize` step ) au
 - [Create and upload Spark Docker Images](#create-and-upload-spark-docker-images)
 - [Create an announcement](#create-an-announcement) 
 
+The `finalize` step pushes to the `asf-site` branch of spark-website. After that push, you may see a follow-up `[html]` commit from GitHub Actions. This is normal.
+
 Please manually verify the result after each step.
 
 <p align="right"><a href="#top">Return to top</a></p>
