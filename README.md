@@ -6,7 +6,7 @@ This repository captures the main Apache Spark website located at https://spark.
 
 ## Contributing
 
-To contribute changes, build and test the site locally, then submit a pull request with your changes. Unless you are working through the [release guide](./release-process.md), you only need to commit changes to the Markdown source. A [GitHub Actions workflow](.github/workflows/html-push.yml) will generate the corresponding HTML under `site/` and push it for you.
+To contribute changes, build and test the site locally, then submit a pull request with your changes. Unless you are working through the [release guide](./release-process.md), you only need to commit changes to source files (typically Markdown). A [GitHub Actions workflow](.github/workflows/html-push.yml) will generate the corresponding HTML under `site/` and push it for you.
 
 ## Building the site locally
 
