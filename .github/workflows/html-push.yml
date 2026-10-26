@@ -37,6 +37,7 @@ jobs:
           echo "No changes to commit."
         else
           COMMIT_TITLE=$(git log -1 --pretty=%s)
-          git commit -m "[html] $COMMIT_TITLE"
+          CO_AUTHOR=$(git log -1 --pretty='Co-authored-by: %an <%ae>')
+          git commit -m "[html] $COMMIT_TITLE" -m "$CO_AUTHOR"
           git push
         fi

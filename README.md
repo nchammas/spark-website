@@ -8,6 +8,8 @@ This repository captures the main Apache Spark website located at https://spark.
 
 To contribute changes, build and test the site locally, then submit a pull request with your changes. Unless you are working through the [release guide](./release-process.md), you only need to commit changes to source files (typically Markdown). A [GitHub Actions workflow](.github/workflows/html-push.yml) will generate the corresponding HTML under `site/` and push it for you.
 
+Generated HTML commits are authored and committed by `github-actions[bot]`, with a `Co-authored-by` trailer crediting the author of the latest source commit.
+
 ## Building the site locally
 
 Building the site requires [Ruby 3](https://www.ruby-lang.org), [Jekyll](http://jekyllrb.com/docs), and [Rouge](https://github.com/rouge-ruby/rouge).
